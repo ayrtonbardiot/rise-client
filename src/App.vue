@@ -1,18 +1,25 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
+    <About />
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import About from './components/About.vue'
+import InterfaceManager from './InterfaceManager.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    HelloWorld,
+    About
+  },
+  getManager: function() {
+    return InterfaceManager.props;
+  },
 }
 </script>
 
