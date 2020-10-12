@@ -10,6 +10,9 @@
         props: {
             about: {
                 show: false
+            },
+            event: {
+                show: false
             }
         },
     }
