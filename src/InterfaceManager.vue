@@ -11,7 +11,13 @@
             about: {
                 show: false
             },
+            hotelalert: {
+                show: false
+            },
             event: {
+                show: false
+            },
+            profile: {
                 show: false
             }
         },

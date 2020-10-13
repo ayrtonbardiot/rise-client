@@ -2,7 +2,9 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <About />
+    <HotelAlert />
     <EventAlert />
+    <MiniProfile />
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -11,14 +13,18 @@
 import HelloWorld from './components/HelloWorld.vue'
 import About from './components/About.vue'
 import InterfaceManager from './InterfaceManager.vue'
+import HotelAlert from './components/HotelAlert.vue'
 import EventAlert from './components/EventAlert.vue'
+import MiniProfile from './components/MiniProfile.vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
     About,
-    EventAlert
+    HotelAlert,
+    EventAlert,
+    MiniProfile
   },
   getManager: function() {
     return InterfaceManager.props;

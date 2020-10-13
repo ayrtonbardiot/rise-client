@@ -1,34 +1,31 @@
 <template>
   <transition name="fade">
-<div class="event-alert-bg" id="event-alert" v-if="data.event.show">
-   <div class="event-alert">
-      <div class="event-alert__top">
-         <div class="event-alert__logo"><img src="~@/assets/img/newclientloaderlogo.png" /></div>
-         <div class="event-alert__title">..bir etkinlik başladı!</div>
-      </div>
-      <div class="event-alert__bottom">
-         <div class="event-alert__close" v-on:click="data.event.show = !data.event.show"></div>
-         <div class="event-alert__headline">Otel yönetimin'den bir mesaj</div>
-         <div class="event-alert__text">message here</div>
-         <div class="event-alert__text"><b>Etkinlikte Kazanacağın ödül:</b>recompense ici</div>
-         <div class="event-alert__text">- nttZx</div>
-         <div class="event-alert__button" onclick="ws.send('6|<?php echo $roomId; ?>');$('#event-alert').fadeOut();">Oyuna Gir
-         </div>
-      </div>
-   </div>
-</div>
-  </transition>
+<div class="event-alert-bg" v-if="data.hotelalert.show" id="hotel-alert">
+  <div class="event-alert">
+    <div class="event-alert__top">
+      <div class="event-alert__logo"><img src="~@/assets/img/newclientloaderlogo.png" /></div>
+      <div class="event-alert__title">..otel yönetimin'den bir mesaj!</div>
+    </div>
+    <div class="event-alert__bottom">
+      <div class="event-alert__close" v-on:click="data.hotelalert.show = !data.hotelalert.show"></div>
+      <div class="event-alert__headline">Otel yönetimin'den bir mesaj</div>
+              <div class="event-alert__text">Message here</div>
+        <div class="event-alert__text">- notaryz</div>
+  </div>
+  </div>
+  </div> 
+  </transition> 
 </template>
 
 <script>
 import App from '../App.vue'
     export default {
-        name: 'EventAlert',
+        name: 'HotelAlert',
         data() {
             return {
                 data: App.getManager()
             }
-        },
+        }
     }
 </script>
 
