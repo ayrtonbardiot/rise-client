@@ -21,7 +21,8 @@
                 show: false
             },
             ltd: {
-                show: false
+                show: false,
+                id: 51625
             }
         },
     }

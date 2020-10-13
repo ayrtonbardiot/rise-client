@@ -3,7 +3,7 @@
 <div class="s63--ltd" v-if="data.ltd.show">
     <div class="ltd_head">
         <div class="head_icon"></div>
-        <div class="head_furniname">Rare-Name</div>
+        <div class="head_furniname">{{ info.name }}</div>
         <div class="head_close" v-on:click="data.ltd.show = !data.ltd.show"></div>
     </div>
     <div class="ltd_bg">
@@ -15,22 +15,22 @@
     <div class="info">
         <div class="icon price"></div>
         <b>Price:</b>
-        <span>300 Duckets</span>
+        <span v-html="info.price"></span>
     </div>
     <div class="info">
         <div class="icon circulation"></div>
         <b>Circulation:</b>
-        <span>16</span>
+        <span>{{ info.circulation }}</span>
     </div>
     <div class="info">
         <div class="icon sells"></div>
         <b>No of Sales:</b>
-        <span>20</span>
+        <span>{{ info.nb_sales }}</span>
     </div>
     <div class="info">
         <div class="icon no"></div>
         <b>LTD No:</b>
-        <span>20</span>
+        <span>{{ info.ltd_no }}</span>
     </div>
     <hr>
     <button>MAĞAZAYA GİT</button>
@@ -45,12 +45,23 @@
 
 <script>
 import App from '../App.vue'
+import axios from 'axios'
     export default {
         name: 'Ltd',
         data() {
             return {
-                data: App.getManager()
+                data: App.getManager(),
+                info: []
             }
+        },
+        created () {
+            axios.get(`http://127.0.0.1/rise/assets/ajax/ltd.php?itemid=` + this.data.ltd.id)
+                .then(response => {
+                    this.info = response.data
+                })
+                .catch(e => {
+                    console.error('Error on request. ' + e)
+                })
         },
     }
 </script>
