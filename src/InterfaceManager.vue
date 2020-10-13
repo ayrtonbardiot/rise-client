@@ -19,6 +19,9 @@
             },
             profile: {
                 show: false
+            },
+            ltd: {
+                show: false
             }
         },
     }

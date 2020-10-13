@@ -1,4 +1,5 @@
 <template>
+<transition name="slide-fade">
 <div class="s63--miniprofile" v-if="data.profile.show">
         <div class="miniprofile_head">
             <div class="head_icon"></div>
@@ -71,6 +72,7 @@
             <p>Thanks to s63, Explorz, nttZx, Ted & Mersus</p>
         </div>
     </div>
+</transition>
 </template>
 
 <script>
@@ -88,6 +90,17 @@ import App from '../App.vue'
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+{
+  transform: translateX(10px);
+  opacity: 0;
+}
 
 * {
     margin: 0;

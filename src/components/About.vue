@@ -4,9 +4,9 @@
 <div class="mxcon-title">Plus Emulator <div id="newcloser" v-on:click="data.about.show = !data.about.show"></div></div>
 <div id="aboutimg"></div>
 <div id="aboutinfos">
-<b>Plus Emulator :: HabcuBIZ</b>
+<b>Plus Emulator :: Rise</b>
 <span>Credits to: <span class="a-right">Sledmore, Devbest Community</span></span>
-<span>Special Thanks to: <span class="a-right">Explorz</span></span>
+<span>Special Thanks to: <span class="a-right">Explorz - nttZx - Ted</span></span>
 <span>Versiyon: <span class="a-right">1.1.0</span></span>
 <b>Current run time information</b>
 <span>Online Users: <span class="a-right">89</span></span>
@@ -14,7 +14,7 @@
 <span>Registered Users: <span class="a-right">1337</span></span>
 <span>Uptime: <span class="a-right">13:37:37</span></span>
 <b>Other informations</b>
-<span>Lisans: <span class="a-right">Habcu.BIZ (151.80.195.50)</span></span>
+<span>Lisans: <span class="a-right">Rise (151.80.195.50)</span></span>
 <span>Last Update: <span class="a-right">17/08/2020, C# 7.0</span></span>
 <span>Chanelogs: <span class="a-right">A, B, C, D, E, F, G</span></span>
 </div>

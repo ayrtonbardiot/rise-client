@@ -5,6 +5,7 @@
     <HotelAlert />
     <EventAlert />
     <MiniProfile />
+    <Ltd />
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -16,6 +17,7 @@ import InterfaceManager from './InterfaceManager.vue'
 import HotelAlert from './components/HotelAlert.vue'
 import EventAlert from './components/EventAlert.vue'
 import MiniProfile from './components/MiniProfile.vue'
+import Ltd from './components/Ltd.vue'
 
 export default {
   name: 'App',
@@ -24,7 +26,8 @@ export default {
     About,
     HotelAlert,
     EventAlert,
-    MiniProfile
+    MiniProfile,
+    Ltd
   },
   getManager: function() {
     return InterfaceManager.props;
