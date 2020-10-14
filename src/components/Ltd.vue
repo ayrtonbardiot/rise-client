@@ -62,7 +62,7 @@ import axios from 'axios'
                 .catch(e => {
                     console.error('Error on request. ' + e)
                 })
-        },
+        }
     }
 </script>
 

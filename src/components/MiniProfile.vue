@@ -3,67 +3,67 @@
 <div class="s63--miniprofile" v-if="data.profile.show">
         <div class="miniprofile_head">
             <div class="head_icon"></div>
-            <div class="head_username">s63</div>
+            <div class="head_username">{{ info.username }}</div>
             <div class="head_close" v-on:click="data.profile.show = !data.profile.show"></div>
         </div>
         <div class="miniprofile_left">
             <div class="miniprofile_userbg">
-                <div class="avatar"></div>
+                <div class="avatar" :style="{ backgroundImage: 'url(https://www.habbo.de/habbo-imaging/avatarimage?figure=' + info.look + '&direction=2&head_direction=3&gesture=sml&size=l&action=wav&headonly=0)' }"></div>
             </div>
             <hr>
             <div class="miniprofile_ships">
                 <div class="icon heart"></div>
-                <a href="#"><span>Explorz</span></a>
+                <a href="#"><span>{{ info.heart }}</span></a>
             </div>
             <div class="miniprofile_ships">
                 <div class="icon smiley"></div>
-                <a href="#"><span>Mersus</span></a>
+                <a href="#"><span>{{ info.smile }}</span></a>
             </div>
             <div class="miniprofile_ships">
                 <div class="icon skull"></div>
-                <a href="#"><span>J.C.Field</span></a>
+                <a href="#"><span>{{ info.headskull }}</span></a>
             </div>
             <hr>
             <div class="miniprofile_mottoap">
                 <div class="icon motto"></div>
-                <textarea type="text" id="mottoyaz" maxlength="25" rows="2" cols="2" placeholder="Mottonu güncelle.."></textarea>
+                <span id="mottoyaz">{{ info.motto }}</span>
             </div>
             <div class="miniprofile_mottoap">
                 <div class="icon activity"></div>
                 <b style="color: #fff;">Başarı Puanı:</b>
-                <span style="color: #fff;"> 1560</span>
+                <span style="color: #fff;"> {{ info.winwin }}</span>
             </div>
             <hr>
             <div class="s63--socialmedia">
-                <a href="#" data-tooltip="s63#9999">
-                    <div class="socialmedias"><i class="fab fa-discord discord"></i></div>
+                <a href="#" v-bind:data-tooltip="info.discord">
+                    <div class="socialmedias"><i class="fab fa-discord"></i></div>
                 </a>
-                <a href="#">
+                <a href="#" v-bind:data-tooltip="info.instagram">
                     <div class="socialmedias"><i class="fab fa-instagram instagram"></i></div>
                 </a>
-                <a href="#">
+                <a href="#" v-bind:data-tooltip="info.facebook">
                     <div class="socialmedias"><i class="fab fa-facebook facebook"></i></div>
                 </a>
             </div>
         </div>
         <div class="miniprofile_right">
-            <div class="badgecase">
-                <div class="badge"></div>
+            <div class="badgecase" v-if="info.badgegroup !== false">
+                <div class="badge" :style="{ backgroundImage: 'url(http://127.0.0.1/habbo-imaging/badge/' + info.badgegroup + '.gif)' }"></div>
             </div>
-            <div class="badgecase">
-                <div class="badge2"></div>
+            <div class="badgecase" v-if="info.badge1 !== undefined">
+                <div class="badge2" :style="{ backgroundImage: 'url(http://127.0.0.1/swf/c_images/album1584/' + info.badge1 + '.gif)' }"></div>
             </div>
-            <div class="badgecase">
-                <div class="badge3"></div>
+            <div class="badgecase" v-if="info.badge2 !== undefined">
+                <div class="badge3" :style="{ backgroundImage: 'url(http://127.0.0.1/swf/c_images/album1584/' + info.badge2 + '.gif)' }"></div>
             </div>
-            <div class="badgecase">
-                <div class="badge4"></div>
+            <div class="badgecase" v-if="info.badge3 !== undefined">
+                <div class="badge4" :style="{ backgroundImage: 'url(http://127.0.0.1/swf/c_images/album1584/' + info.badge3 + '.gif)' }"></div>
             </div>
-            <div class="badgecase">
-                <div class="badge5"></div>
+            <div class="badgecase" v-if="info.badge4 !== undefined">
+                <div class="badge5" :style="{ backgroundImage: 'url(http://127.0.0.1/swf/c_images/album1584/' + info.badge4 + '.gif)' }"></div>
             </div>
-            <div class="badgecase">
-                <div class="badge6"></div>
+            <div class="badgecase" v-if="info.badge5 !== undefined">
+                <div class="badge6" :style="{ backgroundImage: 'url(http://127.0.0.1/swf/c_images/album1584/' + info.badge5 + '.gif)' }"></div>
             </div>
         </div>
         <hr>
@@ -77,13 +77,24 @@
 
 <script>
 import App from '../App.vue'
+import axios from 'axios'
     export default {
         name: 'MiniProfile',
         data() {
             return {
-                data: App.getManager()
+                data: App.getManager(),
+                info: []
             }
         },
+        mounted () {
+            axios.get(`http://127.0.0.1/rise/assets/ajax/profile.php?userid=` + this.data.profile.id)
+                .then(response => {
+                    this.info = response.data
+                })
+                .catch(e => {
+                    console.error('Error on request. ' + e)
+                })
+        }
     }
 </script>
 
@@ -108,7 +119,7 @@ import App from '../App.vue'
     list-style: none;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
-    
+    color: #fff;
 }
 
 *,
@@ -208,7 +219,7 @@ hr {
 .s63--miniprofile .miniprofile_right .badgecase .badge {
     width: 40px;
     height: 40px;
-    background-image: url("~@/assets/img/ADMRISE.png");
+    /* background-image: url("~@/assets/img/ADMRISE.png"); */
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -358,7 +369,6 @@ textarea {
     height: 27px;
     background: rgb(0 0 0 / 0.25);
     border-radius: 5px;
-    display: flex;
     box-shadow: inset 0 0 0 2px #272727;
 }
 
