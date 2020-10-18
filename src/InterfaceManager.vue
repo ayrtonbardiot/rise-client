@@ -9,13 +9,21 @@
         name: 'InterfaceManager',
         props: {
             about: {
-                show: false
+                show: false,
+                onlineusers: 0,
+                roomcount: 0,
+                onlinetime: "",
+                registered: 0
             },
             hotelalert: {
                 show: false
             },
             event: {
-                show: false
+                show: false,
+                username: "",
+                message: "",
+                roomid: 0,
+                recomp: ""
             },
             profile: {
                 show: false,

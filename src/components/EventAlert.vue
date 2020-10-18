@@ -9,10 +9,10 @@
       <div class="event-alert__bottom">
          <div class="event-alert__close" v-on:click="data.event.show = !data.event.show"></div>
          <div class="event-alert__headline">Otel yönetimin'den bir mesaj</div>
-         <div class="event-alert__text">message here</div>
+         <div class="event-alert__text">{{ data.event.message }}</div>
          <div class="event-alert__text"><b>Etkinlikte Kazanacağın ödül:</b>recompense ici</div>
-         <div class="event-alert__text">- nttZx</div>
-         <div class="event-alert__button" onclick="ws.send('6|<?php echo $roomId; ?>');$('#event-alert').fadeOut();">Oyuna Gir
+         <div class="event-alert__text">- {{ data.event.username }}</div>
+         <div class="event-alert__button" v-on:click="App.sendData">Oyuna Gir
          </div>
       </div>
    </div>

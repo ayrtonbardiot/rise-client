@@ -2,21 +2,21 @@
   <transition name="fade">
 <div id="about" v-if="data.about.show" class="mxcon" v-drag>
 <div class="mxcon-title">Plus Emulator <div id="newcloser" v-on:click="data.about.show = !data.about.show"></div></div>
-<div id="aboutimg"></div>
+<div id="aboutimg" style="background: url('https://media.discordapp.net/attachments/766737646927741019/766787454027300884/Comic-4.png?width=475&amp;height=475');background-position-x: -85px;background-position-y: -55px;"></div>
 <div id="aboutinfos">
-<b>Plus Emulator :: Rise</b>
+<b>SuperPlus Emulator</b>
 <span>Credits to: <span class="a-right">Sledmore, Devbest Community</span></span>
-<span>Special Thanks to: <span class="a-right">Explorz - nttZx - Ted</span></span>
+<span>Special Thanks to: <span class="a-right">Explorz, nttZx</span></span>
 <span>Versiyon: <span class="a-right">1.1.0</span></span>
 <b>Current run time information</b>
-<span>Online Users: <span class="a-right">89</span></span>
-<span>Rooms Loaded: <span class="a-right">150000</span></span>
-<span>Registered Users: <span class="a-right">1337</span></span>
-<span>Uptime: <span class="a-right">13:37:37</span></span>
+<span>Online Users: <span class="a-right">{{ data.about.onlineusers }}</span></span>
+<span>Rooms Loaded: <span class="a-right">{{ data.about.roomcount }}</span></span>
+<span>Registered Users: <span class="a-right">{{ data.about.registered }}</span></span>
+<span>Uptime: <span class="a-right">{{ data.about.onlinetime }}</span></span>
 <b>Other informations</b>
 <span>Lisans: <span class="a-right">Rise (151.80.195.50)</span></span>
 <span>Last Update: <span class="a-right">17/08/2020, C# 7.0</span></span>
-<span>Chanelogs: <span class="a-right">A, B, C, D, E, F, G</span></span>
+<span>Changelogs: <span class="a-right">A, B, C, D, E, F, G</span></span>
 </div>
 </div>
   </transition>
@@ -62,6 +62,26 @@ div#newcloser:hover {
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
+* {
+	font-family: Ubuntu,-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+	margin: 0;
+	padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: default;
+	
+}
+body {
+    background: none repeat scroll 0 0 #000;
+    font: .8em Sans-Serif;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    margin: 0;
+    font-family: Ubuntu;
+    overflow: hidden;
+}
 div.mxcon {
 	width: 550px;
 	background: #f0f0f0;
@@ -103,14 +123,20 @@ div#aboutinfos b {
 	margin-top: 15px;
 }
 div#aboutinfos span {
-	font-size: 12px;
-	display: block;
-	margin-top: 0px;
+    font-size: 12px;
+    display: block;
+    margin-top: 0px;
 }
 div#aboutinfos span span {
 	float: right;
 }
 div#aboutinfos b:first-child {
 	margin-top: 4px;
+}
+b, strong {
+    font-weight: bolder;
+}
+b, optgroup, strong {
+    font-weight: 700;
 }
 </style>
