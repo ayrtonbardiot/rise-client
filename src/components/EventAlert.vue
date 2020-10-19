@@ -12,7 +12,7 @@
          <div class="event-alert__text">{{ data.event.message }}</div>
          <div class="event-alert__text"><b>Etkinlikte Kazanacağın ödül:</b>recompense ici</div>
          <div class="event-alert__text">- {{ data.event.username }}</div>
-         <div class="event-alert__button" v-on:click="App.sendData">Oyuna Gir
+         <div class="event-alert__button" v-on:click="joinRoom(data.event.roomid); data.event.show = !data.event.show">Oyuna Gir
          </div>
       </div>
    </div>
@@ -26,8 +26,13 @@ import App from '../App.vue'
         name: 'EventAlert',
         data() {
             return {
-                data: App.getManager()
+                data: App.getManager(),
             }
+        },
+        methods: {
+          joinRoom(idroom) {
+             App.sendData('6|' + idroom);
+          }
         },
     }
 </script>

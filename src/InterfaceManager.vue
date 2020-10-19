@@ -16,7 +16,9 @@
                 registered: 0
             },
             hotelalert: {
-                show: false
+                show: false,
+                username: "",
+                message: ""
             },
             event: {
                 show: false,
@@ -27,11 +29,15 @@
             },
             profile: {
                 show: false,
-                id: 1
+                info: []
             },
             ltd: {
                 show: false,
-                id: 0
+                info: []
+            },
+            mentions: {
+                show: false,
+                mentioncount: 0
             }
         },
     }

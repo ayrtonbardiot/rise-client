@@ -9,8 +9,8 @@
     <div class="event-alert__bottom">
       <div class="event-alert__close" v-on:click="data.hotelalert.show = !data.hotelalert.show"></div>
       <div class="event-alert__headline">Otel yönetimin'den bir mesaj</div>
-              <div class="event-alert__text">Message here</div>
-        <div class="event-alert__text">- notaryz</div>
+              <div class="event-alert__text">{{ data.hotelalert.message }}</div>
+        <div class="event-alert__text">- {{ data.hotelalert.username }}</div>
   </div>
   </div>
   </div> 

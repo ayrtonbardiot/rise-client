@@ -3,67 +3,67 @@
 <div class="s63--miniprofile" v-if="data.profile.show">
         <div class="miniprofile_head">
             <div class="head_icon"></div>
-            <div class="head_username">{{ info.username }}</div>
+            <div class="head_username">{{ data.profile.info.username }}</div>
             <div class="head_close" v-on:click="data.profile.show = !data.profile.show"></div>
         </div>
         <div class="miniprofile_left">
             <div class="miniprofile_userbg">
-                <div class="avatar" :style="{ backgroundImage: 'url(https://www.habbo.de/habbo-imaging/avatarimage?figure=' + info.look + '&direction=2&head_direction=3&gesture=sml&size=l&action=wav&headonly=0)' }"></div>
+                <div class="avatar" :style="{ backgroundImage: 'url(https://www.habbo.de/habbo-imaging/avatarimage?figure=' + data.profile.info.look + '&direction=2&head_direction=3&gesture=sml&size=l&action=wav&headonly=0)' }"></div>
             </div>
             <hr>
             <div class="miniprofile_ships">
                 <div class="icon heart"></div>
-                <a href="#"><span>{{ info.heart }}</span></a>
+                <a href="#"><span>{{ data.profile.info.heart }}</span></a>
             </div>
             <div class="miniprofile_ships">
                 <div class="icon smiley"></div>
-                <a href="#"><span>{{ info.smile }}</span></a>
+                <a href="#"><span>{{ data.profile.info.smile }}</span></a>
             </div>
             <div class="miniprofile_ships">
                 <div class="icon skull"></div>
-                <a href="#"><span>{{ info.headskull }}</span></a>
+                <a href="#"><span>{{ data.profile.info.headskull }}</span></a>
             </div>
             <hr>
             <div class="miniprofile_mottoap">
                 <div class="icon motto"></div>
-                <span id="mottoyaz">{{ info.motto }}</span>
+                <span id="mottoyaz">{{ data.profile.info.motto }}</span>
             </div>
             <div class="miniprofile_mottoap">
                 <div class="icon activity"></div>
                 <b style="color: #fff;">Başarı Puanı:</b>
-                <span style="color: #fff;"> {{ info.winwin }}</span>
+                <span style="color: #fff;"> {{ data.profile.info.winwin }}</span>
             </div>
             <hr>
             <div class="s63--socialmedia">
-                <a href="#" v-bind:data-tooltip="info.discord">
+                <a href="#" v-bind:data-tooltip="data.profile.info.discord">
                     <div class="socialmedias"><i class="fab fa-discord"></i></div>
                 </a>
-                <a href="#" v-bind:data-tooltip="info.instagram">
+                <a href="#" v-bind:data-tooltip="data.profile.info.instagram">
                     <div class="socialmedias"><i class="fab fa-instagram instagram"></i></div>
                 </a>
-                <a href="#" v-bind:data-tooltip="info.facebook">
+                <a href="#" v-bind:data-tooltip="data.profile.info.facebook">
                     <div class="socialmedias"><i class="fab fa-facebook facebook"></i></div>
                 </a>
             </div>
         </div>
         <div class="miniprofile_right">
-            <div class="badgecase" v-if="info.badgegroup !== false">
-                <div class="badge" :style="{ backgroundImage: 'url(http://127.0.0.1/habbo-imaging/badge/' + info.badgegroup + '.gif)' }"></div>
+            <div class="badgecase" v-if="data.profile.info.badgegroup !== false">
+                <div class="badge" :style="{ backgroundImage: 'url(http://127.0.0.1/habbo-imaging/badge/' + data.profile.info.badgegroup + '.gif)' }"></div>
             </div>
-            <div class="badgecase" v-if="info.badge1 !== undefined">
-                <div class="badge2" :style="{ backgroundImage: 'url(http://127.0.0.1/swf/c_images/album1584/' + info.badge1 + '.gif)' }"></div>
+            <div class="badgecase" v-if="data.profile.info.badge1 !== undefined">
+                <div class="badge2" :style="{ backgroundImage: 'url(http://127.0.0.1/swf/c_images/album1584/' + data.profile.info.badge1 + '.gif)' }"></div>
             </div>
-            <div class="badgecase" v-if="info.badge2 !== undefined">
-                <div class="badge3" :style="{ backgroundImage: 'url(http://127.0.0.1/swf/c_images/album1584/' + info.badge2 + '.gif)' }"></div>
+            <div class="badgecase" v-if="data.profile.info.badge2 !== undefined">
+                <div class="badge3" :style="{ backgroundImage: 'url(http://127.0.0.1/swf/c_images/album1584/' + data.profile.info.badge2 + '.gif)' }"></div>
             </div>
-            <div class="badgecase" v-if="info.badge3 !== undefined">
-                <div class="badge4" :style="{ backgroundImage: 'url(http://127.0.0.1/swf/c_images/album1584/' + info.badge3 + '.gif)' }"></div>
+            <div class="badgecase" v-if="data.profile.info.badge3 !== undefined">
+                <div class="badge4" :style="{ backgroundImage: 'url(http://127.0.0.1/swf/c_images/album1584/' + data.profile.info.badge3 + '.gif)' }"></div>
             </div>
-            <div class="badgecase" v-if="info.badge4 !== undefined">
-                <div class="badge5" :style="{ backgroundImage: 'url(http://127.0.0.1/swf/c_images/album1584/' + info.badge4 + '.gif)' }"></div>
+            <div class="badgecase" v-if="data.profile.info.badge4 !== undefined">
+                <div class="badge5" :style="{ backgroundImage: 'url(http://127.0.0.1/swf/c_images/album1584/' + data.profile.info.badge4 + '.gif)' }"></div>
             </div>
-            <div class="badgecase" v-if="info.badge5 !== undefined">
-                <div class="badge6" :style="{ backgroundImage: 'url(http://127.0.0.1/swf/c_images/album1584/' + info.badge5 + '.gif)' }"></div>
+            <div class="badgecase" v-if="data.profile.info.badge5 !== undefined">
+                <div class="badge6" :style="{ backgroundImage: 'url(http://127.0.0.1/swf/c_images/album1584/' + data.profile.info.badge5 + '.gif)' }"></div>
             </div>
         </div>
         <hr>
@@ -77,24 +77,13 @@
 
 <script>
 import App from '../App.vue'
-import axios from 'axios'
     export default {
         name: 'MiniProfile',
         data() {
             return {
                 data: App.getManager(),
-                info: []
             }
         },
-        mounted () {
-            axios.get(`http://127.0.0.1/rise/assets/ajax/profile.php?userid=` + this.data.profile.id)
-                .then(response => {
-                    this.info = response.data
-                })
-                .catch(e => {
-                    console.error('Error on request. ' + e)
-                })
-        }
     }
 </script>
 

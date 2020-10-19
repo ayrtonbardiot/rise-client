@@ -51,18 +51,8 @@ import axios from 'axios'
         data() {
             return {
                 data: App.getManager(),
-                info: []
             }
         },
-        created () {
-            axios.get(`http://127.0.0.1/rise/assets/ajax/ltd.php?itemid=` + this.data.ltd.id)
-                .then(response => {
-                    this.info = response.data
-                })
-                .catch(e => {
-                    console.error('Error on request. ' + e)
-                })
-        }
     }
 </script>
 
